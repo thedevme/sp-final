@@ -74,6 +74,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let goalAudio = SKAudioNode(fileNamed: "goal_short.wav")
     let soccerFrame = CGRectMake(150, 200, 1550, 680)
     let font = "SuperMarioGalaxy"
+    var didPlayerScore = false
+    
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
             MenuState(scene: self),
@@ -83,16 +85,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         createMenu()
+        
         addSwipeGestureRecognizers()
         addTapGestureRecognizers()
+        addMenuTapGestureRecognizers()
+        
+        
         setupPhysics()
         createGoalText()
         createPlayers()
         createGoals()
         createCorners()
         createScore()
-        
-        
         
         gameState.enterState(MenuState)
     }
@@ -134,7 +138,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVectorMake(0, 0)
         
         physicsBody = SKPhysicsBody.init(edgeLoopFromRect: soccerFrame)
-        physicsBody!.contactTestBitMask = ColliderType.WallCategory.rawValue
+        physicsBody!.categoryBitMask = ColliderType.WallCategory.rawValue
         
         physicsBody!.dynamic = false
         physicsBody!.friction = 0.0
@@ -161,25 +165,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let topLeftCornerRect = CGRectMake(150, 780, 115, 100)
         let topLeftCorner = SKNode()
         topLeftCorner.physicsBody = SKPhysicsBody(edgeLoopFromRect: topLeftCornerRect)
-        topLeftCorner.physicsBody!.contactTestBitMask = ColliderType.WallCategory.rawValue
+        topLeftCorner.physicsBody!.categoryBitMask = ColliderType.WallCategory.rawValue
         self.addChild(topLeftCorner)
         
         let bottomLeftCornerRect = CGRectMake(150, 200, 115, 100)
         let bottomLeftCorner = SKNode()
         bottomLeftCorner.physicsBody = SKPhysicsBody(edgeLoopFromRect: bottomLeftCornerRect)
-        bottomLeftCorner.physicsBody!.contactTestBitMask = ColliderType.WallCategory.rawValue
+        bottomLeftCorner.physicsBody!.categoryBitMask = ColliderType.WallCategory.rawValue
         self.addChild(bottomLeftCorner)
         
         let topRightCornerRect = CGRectMake(1600, 780, 100, 100)
         let topRightCorner = SKNode()
         topRightCorner.physicsBody = SKPhysicsBody(edgeLoopFromRect: topRightCornerRect)
-        topRightCorner.physicsBody!.contactTestBitMask = ColliderType.WallCategory.rawValue
+        topRightCorner.physicsBody!.categoryBitMask = ColliderType.WallCategory.rawValue
         self.addChild(topRightCorner)
         
         let bottomRightCornerRect = CGRectMake(1600, 200, 100, 100)
         let bottomRightCorner = SKNode()
         bottomRightCorner.physicsBody = SKPhysicsBody(edgeLoopFromRect: bottomRightCornerRect)
-        bottomRightCorner.physicsBody!.contactTestBitMask = ColliderType.WallCategory.rawValue
+        bottomRightCorner.physicsBody!.categoryBitMask = ColliderType.WallCategory.rawValue
         self.addChild(bottomRightCorner)
     }
     
@@ -256,21 +260,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func removeSwipeGestureRecognizers() {
-        swipeUpRec.addTarget(self, action: #selector(GameScene.onMenuSwipe(_:)))
-        swipeUpRec.direction = .Up
         view!.removeGestureRecognizer(swipeUpRec)
-        
-        swipeDownRec.addTarget(self, action: #selector(GameScene.onMenuSwipe(_:)))
-        swipeDownRec.direction = .Down
         view!.removeGestureRecognizer(swipeDownRec)
     }
     
     func addTapGestureRecognizers() {
-        
-
         tapPlayPauseRec.addTarget(self, action: #selector(GameScene.onPlayPauseTapped))
         tapPlayPauseRec.allowedPressTypes = [NSNumber(integer: UIPressType.PlayPause.rawValue)]
         view!.addGestureRecognizer(tapPlayPauseRec)
+    }
+    
+    func removeTapGestureRecognizers() {
+        view!.removeGestureRecognizer(tapPlayPauseRec)
     }
     
     func addMenuTapGestureRecognizers() {
@@ -279,10 +280,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.addGestureRecognizer(tapSelectedRec)
     }
     
-    
     func removeMenuTapGestureRecognizers() {
-        tapSelectedRec.addTarget(self, action: #selector(GameScene.onSelectedTapped))
-        tapSelectedRec.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
         view!.removeGestureRecognizer(tapSelectedRec)
     }
     
@@ -422,6 +420,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func scorePointForPlayer(player:Int)
     {
+        didPlayerScore = true
         showGoalText()
         stopBall()
         
@@ -454,13 +453,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 secondBody = contact.bodyA
             }
             
-            if firstBody.contactTestBitMask == ColliderType.BallCategory.rawValue || secondBody.contactTestBitMask == ColliderType.WallCategory.rawValue {
+            if firstBody.categoryBitMask == ColliderType.BallCategory.rawValue && secondBody.categoryBitMask == ColliderType.WallCategory.rawValue {
                 background!.runAction(
-                    SKAction.sequence([
-                        SKAction.runBlock {
-                            self.wallAudio.runAction(SKAction.play())
-                        }]
-                    ))
+                    SKAction.runBlock {
+                        self.wallAudio.runAction(SKAction.play())
+                    })
             }
 
             
@@ -468,22 +465,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 scorePointForPlayer(2)
                 
                 background!.runAction(
-                    SKAction.sequence([
-                        SKAction.runBlock {
-                            self.goalAudio.runAction(SKAction.play())
-                        }]
-                    ))
+                    SKAction.runBlock {
+                        self.goalAudio.runAction(SKAction.play())
+                    })
             }
             
             if firstBody.categoryBitMask == ColliderType.BallCategory.rawValue && secondBody.categoryBitMask == ColliderType.P2ScoreCategory.rawValue {
                 scorePointForPlayer(1)
                 
                 background!.runAction(
-                    SKAction.sequence([
-                        SKAction.runBlock {
-                            self.goalAudio.runAction(SKAction.play())
-                        }]
-                    ))
+                    SKAction.runBlock {
+                        self.goalAudio.runAction(SKAction.play())
+                    })
             }
             
             if firstBody.categoryBitMask == ColliderType.BallCategory.rawValue && secondBody.categoryBitMask == ColliderType.Paddle1Category.rawValue {
@@ -503,19 +496,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createHitSound(player:Player) {
         if player == .Player1 {
             player1!.runAction(
-                SKAction.sequence([
-                    SKAction.runBlock {
-                        self.blockBallAudio.runAction(SKAction.play())
-                    }]
-                ))
+                SKAction.runBlock {
+                    self.blockBallAudio.runAction(SKAction.play())
+                })
         }
         else {
             player2!.runAction(
-                SKAction.sequence([
-                    SKAction.runBlock {
-                        self.blockBallAudio.runAction(SKAction.play())
-                    }]
-                ))
+                SKAction.runBlock {
+                    self.blockBallAudio.runAction(SKAction.play())
+                })
         }
     }
     
@@ -538,18 +527,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         else
         {
+            
             performSelector(#selector(GameScene.serve), withObject: self, afterDelay: 4)
         }
     }
     
     func serve()
     {
-        addChild(ballNode)
+        didPlayerScore = false
         
-        invalidateTimer()
-        serveBall()
+        if gameState.currentState is PlayingState {
+           
+            addChild(ballNode)
+            
+            invalidateTimer()
+            serveBall()
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(5.8, target: self, selector: #selector(GameScene.accelerateBall), userInfo: nil, repeats: true)
+        }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(5.8, target: self, selector: #selector(GameScene.accelerateBall), userInfo: nil, repeats: true)
     }
     
     func updatePaddlePositions()

@@ -20,9 +20,21 @@ class PausedState: GKState {
     override func didEnterWithPreviousState(previousState: GKState?) {
         print("paused state did enter")
 
-        scene.ballNode!.physicsBody!.dynamic = false
-//        scene.stopBallAnimation()
-        scene.ballNode!.hidden = true
+        if !scene.didPlayerScore {
+            scene.ballNode!.physicsBody!.dynamic = false
+            //        scene.stopBallAnimation()
+            scene.ballNode!.hidden = true
+        }
+        else {
+            scene.hideGoalText()
+            scene.invalidateTimer()
+            scene.background!.runAction(
+                SKAction.runBlock {
+                    self.scene.goalAudio.runAction(SKAction.stop())
+                })
+            
+        }
+        
         scene.childNodeWithName("//pausedContainer")?.alpha = 1.0
     }
     
