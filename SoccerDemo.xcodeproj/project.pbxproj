@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B16E9A61D487C2000874F38 /* MenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16E9A31D487C2000874F38 /* MenuState.swift */; };
+		2B16E9A71D487C2000874F38 /* PausedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16E9A41D487C2000874F38 /* PausedState.swift */; };
+		2B16E9A81D487C2000874F38 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16E9A51D487C2000874F38 /* PlayingState.swift */; };
+		2B2EC3AD1D34C1D30071C613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EC3AC1D34C1D30071C613 /* AppDelegate.swift */; };
+		2B2EC3AF1D34C1D30071C613 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2B2EC3AE1D34C1D30071C613 /* GameScene.sks */; };
+		2B2EC3B11D34C1D30071C613 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EC3B01D34C1D30071C613 /* GameScene.swift */; };
+		2B2EC3B31D34C1D30071C613 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EC3B21D34C1D30071C613 /* GameViewController.swift */; };
+		2B2EC3B51D34C1D30071C613 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2EC3B41D34C1D30071C613 /* Game.xcassets */; };
+		2B2EC3B81D34C1D30071C613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2EC3B61D34C1D30071C613 /* Main.storyboard */; };
+		2B2EC3BA1D34C1D30071C613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2EC3B91D34C1D30071C613 /* Assets.xcassets */; };
+		2BB999BE1D35A74B00F8C52D /* ball.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2BB999BB1D35A74B00F8C52D /* ball.atlas */; };
+		2BB999BF1D35A74B00F8C52D /* p1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2BB999BC1D35A74B00F8C52D /* p1.atlas */; };
+		2BB999C01D35A74B00F8C52D /* p2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2BB999BD1D35A74B00F8C52D /* p2.atlas */; };
+		2BD6C9901D3946F7006EE462 /* SuperMario256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BC2A1C31D3940A800E0114C /* SuperMario256.ttf */; };
+		2BD6C9941D394750006EE462 /* paddle_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6C9911D394750006EE462 /* paddle_hit.wav */; };
+		2BD6C9961D394750006EE462 /* wall_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6C9931D394750006EE462 /* wall_hit.wav */; };
+		2BD6C9981D394992006EE462 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD6C9971D394992006EE462 /* CoreAudio.framework */; };
+		2BD6C99A1D395328006EE462 /* goal_short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6C9991D395328006EE462 /* goal_short.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2B16E9A31D487C2000874F38 /* MenuState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
+		2B16E9A41D487C2000874F38 /* PausedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausedState.swift; sourceTree = "<group>"; };
+		2B16E9A51D487C2000874F38 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
+		2B2EC3A91D34C1D30071C613 /* SoccerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2EC3AC1D34C1D30071C613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B2EC3AE1D34C1D30071C613 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		2B2EC3B01D34C1D30071C613 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		2B2EC3B21D34C1D30071C613 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		2B2EC3B41D34C1D30071C613 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		2B2EC3B71D34C1D30071C613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B2EC3B91D34C1D30071C613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B2EC3BB1D34C1D30071C613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB999BB1D35A74B00F8C52D /* ball.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ball.atlas; sourceTree = "<group>"; };
+		2BB999BC1D35A74B00F8C52D /* p1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = p1.atlas; sourceTree = "<group>"; };
+		2BB999BD1D35A74B00F8C52D /* p2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = p2.atlas; sourceTree = "<group>"; };
+		2BC2A1C31D3940A800E0114C /* SuperMario256.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMario256.ttf; sourceTree = "<group>"; };
+		2BD6C9911D394750006EE462 /* paddle_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = paddle_hit.wav; sourceTree = "<group>"; };
+		2BD6C9931D394750006EE462 /* wall_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall_hit.wav; sourceTree = "<group>"; };
+		2BD6C9971D394992006EE462 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		2BD6C9991D395328006EE462 /* goal_short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goal_short.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B2EC3A61D34C1D30071C613 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BD6C9981D394992006EE462 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B16E9A01D483EC200874F38 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6C9911D394750006EE462 /* paddle_hit.wav */,
+				2BD6C9991D395328006EE462 /* goal_short.wav */,
+				2BD6C9931D394750006EE462 /* wall_hit.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		2B16E9A11D483EC900874F38 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2BC2A1C31D3940A800E0114C /* SuperMario256.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		2B16E9A21D483F8900874F38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6C9971D394992006EE462 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B2EC3A01D34C1D20071C613 = {
+			isa = PBXGroup;
+			children = (
+				2B16E9A21D483F8900874F38 /* Frameworks */,
+				2B2EC3AB1D34C1D30071C613 /* SoccerDemo */,
+				2B2EC3AA1D34C1D30071C613 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B2EC3AA1D34C1D30071C613 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B2EC3A91D34C1D30071C613 /* SoccerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B2EC3AB1D34C1D30071C613 /* SoccerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2B2EC3B41D34C1D30071C613 /* Game.xcassets */,
+				2B2EC3B91D34C1D30071C613 /* Assets.xcassets */,
+				2B16E9A01D483EC200874F38 /* Audio */,
+				2B16E9A11D483EC900874F38 /* Font */,
+				2B917C101D3722DF00273DD1 /* States */,
+				2BB999BA1D35A73200F8C52D /* Atlases */,
+				2B2EC3AC1D34C1D30071C613 /* AppDelegate.swift */,
+				2B2EC3AE1D34C1D30071C613 /* GameScene.sks */,
+				2B2EC3B01D34C1D30071C613 /* GameScene.swift */,
+				2B2EC3B21D34C1D30071C613 /* GameViewController.swift */,
+				2B2EC3B61D34C1D30071C613 /* Main.storyboard */,
+				2B2EC3BB1D34C1D30071C613 /* Info.plist */,
+			);
+			path = SoccerDemo;
+			sourceTree = "<group>";
+		};
+		2B917C101D3722DF00273DD1 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				2B16E9A31D487C2000874F38 /* MenuState.swift */,
+				2B16E9A41D487C2000874F38 /* PausedState.swift */,
+				2B16E9A51D487C2000874F38 /* PlayingState.swift */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
+		2BB999BA1D35A73200F8C52D /* Atlases */ = {
+			isa = PBXGroup;
+			children = (
+				2BB999BB1D35A74B00F8C52D /* ball.atlas */,
+				2BB999BC1D35A74B00F8C52D /* p1.atlas */,
+				2BB999BD1D35A74B00F8C52D /* p2.atlas */,
+			);
+			name = Atlases;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B2EC3A81D34C1D30071C613 /* SoccerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B2EC3BE1D34C1D30071C613 /* Build configuration list for PBXNativeTarget "SoccerDemo" */;
+			buildPhases = (
+				2B2EC3A51D34C1D30071C613 /* Sources */,
+				2B2EC3A61D34C1D30071C613 /* Frameworks */,
+				2B2EC3A71D34C1D30071C613 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoccerDemo;
+			productName = SoccerDemo;
+			productReference = 2B2EC3A91D34C1D30071C613 /* SoccerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B2EC3A11D34C1D20071C613 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Cocoa Academy";
+				TargetAttributes = {
+					2B2EC3A81D34C1D30071C613 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2B2EC3A41D34C1D20071C613 /* Build configuration list for PBXProject "SoccerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B2EC3A01D34C1D20071C613;
+			productRefGroup = 2B2EC3AA1D34C1D30071C613 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B2EC3A81D34C1D30071C613 /* SoccerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B2EC3A71D34C1D30071C613 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB999BF1D35A74B00F8C52D /* p1.atlas in Resources */,
+				2BD6C9961D394750006EE462 /* wall_hit.wav in Resources */,
+				2BD6C99A1D395328006EE462 /* goal_short.wav in Resources */,
+				2BD6C9901D3946F7006EE462 /* SuperMario256.ttf in Resources */,
+				2B2EC3B81D34C1D30071C613 /* Main.storyboard in Resources */,
+				2B2EC3AF1D34C1D30071C613 /* GameScene.sks in Resources */,
+				2B2EC3BA1D34C1D30071C613 /* Assets.xcassets in Resources */,
+				2B2EC3B51D34C1D30071C613 /* Game.xcassets in Resources */,
+				2BB999C01D35A74B00F8C52D /* p2.atlas in Resources */,
+				2BD6C9941D394750006EE462 /* paddle_hit.wav in Resources */,
+				2BB999BE1D35A74B00F8C52D /* ball.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B2EC3A51D34C1D30071C613 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B16E9A61D487C2000874F38 /* MenuState.swift in Sources */,
+				2B2EC3B11D34C1D30071C613 /* GameScene.swift in Sources */,
+				2B16E9A71D487C2000874F38 /* PausedState.swift in Sources */,
+				2B2EC3B31D34C1D30071C613 /* GameViewController.swift in Sources */,
+				2B16E9A81D487C2000874F38 /* PlayingState.swift in Sources */,
+				2B2EC3AD1D34C1D30071C613 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2B2EC3B61D34C1D30071C613 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B2EC3B71D34C1D30071C613 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B2EC3BC1D34C1D30071C613 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		2B2EC3BD1D34C1D30071C613 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B2EC3BF1D34C1D30071C613 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SoccerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academy.cocoa.SoccerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2B2EC3C01D34C1D30071C613 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SoccerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academy.cocoa.SoccerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B2EC3A41D34C1D20071C613 /* Build configuration list for PBXProject "SoccerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B2EC3BC1D34C1D30071C613 /* Debug */,
+				2B2EC3BD1D34C1D30071C613 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B2EC3BE1D34C1D30071C613 /* Build configuration list for PBXNativeTarget "SoccerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B2EC3BF1D34C1D30071C613 /* Debug */,
+				2B2EC3C01D34C1D30071C613 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B2EC3A11D34C1D20071C613 /* Project object */;
+}
